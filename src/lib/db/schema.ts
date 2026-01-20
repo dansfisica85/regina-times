@@ -12,7 +12,7 @@ export type CarreiraType = typeof Carreira[number]
 export const JornadaAulas = [9, 19, 20, 24, 32] as const
 export type JornadaAulasType = typeof JornadaAulas[number]
 
-export const UserRole = ['SUPER_ADMIN', 'COORDENADOR_REGIONAL', 'DIRETOR_ESCOLA', 'SECRETARIO_HORARIOS', 'PROFESSOR'] as const
+export const UserRole = ['ADMIN', 'ESCOLA', 'VISUALIZADOR', 'OBSERVADOR'] as const
 export type UserRoleType = typeof UserRole[number]
 
 export const Status = ['ATIVO', 'INATIVO'] as const
