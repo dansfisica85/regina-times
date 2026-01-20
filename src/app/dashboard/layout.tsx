@@ -1,9 +1,10 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
 import {
   School,
   Users,
@@ -17,20 +18,46 @@ import {
   Menu,
   X,
   LogOut,
+  Map,
+  Eye,
 } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-const menuItems = [
-  { href: '/dashboard', label: 'Início', icon: Home },
-  { href: '/dashboard/escolas', label: 'Escolas', icon: School },
-  { href: '/dashboard/turnos', label: 'Turnos', icon: Clock },
-  { href: '/dashboard/professores', label: 'Professores', icon: Users },
-  { href: '/dashboard/disciplinas', label: 'Disciplinas', icon: BookOpen },
-  { href: '/dashboard/turmas', label: 'Turmas', icon: GraduationCap },
-  { href: '/dashboard/grades', label: 'Grade Horária', icon: Calendar },
-  { href: '/dashboard/geracao', label: 'Gerar Horários', icon: FileSpreadsheet },
-  { href: '/dashboard/configuracoes', label: 'Configurações', icon: Settings },
-]
+interface UserData {
+  id: string
+  email: string
+  nome: string
+  role: 'ADMIN' | 'ESCOLA' | 'VISUALIZADOR' | 'OBSERVADOR'
+  escolaId?: string
+}
+
+// Menus por role
+const getMenuItems = (role: string) => {
+  const baseItems = [
+    { href: '/dashboard', label: 'Início', icon: Home, roles: ['ADMIN', 'ESCOLA', 'VISUALIZADOR', 'OBSERVADOR'] },
+    { href: '/dashboard/mapa', label: 'Mapa de Horários', icon: Map, roles: ['ADMIN', 'ESCOLA', 'VISUALIZADOR', 'OBSERVADOR'] },
+  ]
+  
+  const adminEscolaItems = [
+    { href: '/dashboard/escolas', label: 'Escolas', icon: School, roles: ['ADMIN'] },
+    { href: '/dashboard/turnos', label: 'Turnos', icon: Clock, roles: ['ADMIN', 'ESCOLA'] },
+    { href: '/dashboard/professores', label: 'Professores', icon: Users, roles: ['ADMIN', 'ESCOLA'] },
+    { href: '/dashboard/disciplinas', label: 'Disciplinas', icon: BookOpen, roles: ['ADMIN', 'ESCOLA'] },
+    { href: '/dashboard/turmas', label: 'Turmas', icon: GraduationCap, roles: ['ADMIN', 'ESCOLA'] },
+    { href: '/dashboard/grades', label: 'Grade Horária', icon: Calendar, roles: ['ADMIN', 'ESCOLA'] },
+    { href: '/dashboard/geracao', label: 'Gerar Horários', icon: FileSpreadsheet, roles: ['ADMIN', 'ESCOLA'] },
+    { href: '/dashboard/configuracoes', label: 'Configurações', icon: Settings, roles: ['ADMIN'] },
+  ]
+  
+  return [...baseItems, ...adminEscolaItems].filter(item => item.roles.includes(role))
+}
+
+const roleLabels: Record<string, { label: string, color: string }> = {
+  'ADMIN': { label: 'Administrador', color: 'bg-red-500' },
+  'ESCOLA': { label: 'Diretor de Escola', color: 'bg-blue-500' },
+  'VISUALIZADOR': { label: 'Visualizador', color: 'bg-green-500' },
+  'OBSERVADOR': { label: 'Observador', color: 'bg-gray-500' },
+}
 
 export default function DashboardLayout({
   children,
@@ -38,7 +65,32 @@ export default function DashboardLayout({
   children: React.ReactNode
 }) {
   const pathname = usePathname()
+  const router = useRouter()
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [user, setUser] = useState<UserData | null>(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    // Verificar se há usuário logado
+    const userData = localStorage.getItem('user')
+    if (userData) {
+      setUser(JSON.parse(userData))
+    }
+    setLoading(false)
+  }, [])
+
+  const handleLogout = async () => {
+    try {
+      await fetch('/api/auth/logout', { method: 'POST' })
+      localStorage.removeItem('user')
+      router.push('/login')
+    } catch (error) {
+      console.error('Erro ao fazer logout:', error)
+    }
+  }
+
+  const menuItems = user ? getMenuItems(user.role) : []
+  const roleInfo = user ? roleLabels[user.role] : null
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -91,13 +143,23 @@ export default function DashboardLayout({
           ))}
         </nav>
 
-        <div className="absolute bottom-0 left-0 right-0 p-4 border-t">
-          <Link href="/">
-            <Button variant="ghost" className="w-full justify-start gap-2">
-              <LogOut className="h-5 w-5" />
-              Sair
-            </Button>
-          </Link>
+        <div className="absolute bottom-0 left-0 right-0 p-4 border-t space-y-3">
+          {user && roleInfo && (
+            <div className="px-3 py-2 bg-gray-50 rounded-md">
+              <p className="text-xs text-gray-500 truncate">{user.email}</p>
+              <Badge className={`${roleInfo.color} text-white text-xs mt-1`}>
+                {roleInfo.label}
+              </Badge>
+            </div>
+          )}
+          <Button 
+            variant="ghost" 
+            className="w-full justify-start gap-2"
+            onClick={handleLogout}
+          >
+            <LogOut className="h-5 w-5" />
+            Sair
+          </Button>
         </div>
       </aside>
 
@@ -119,8 +181,15 @@ export default function DashboardLayout({
                 Sistema de Horários SEDUC-SP
               </h1>
             </div>
-            <div className="text-sm text-gray-500">
-              Ano Letivo 2026
+            <div className="flex items-center gap-3">
+              {user && (
+                <span className="text-sm text-gray-600 hidden md:block">
+                  Olá, {user.nome.split(' ')[0]}
+                </span>
+              )}
+              <span className="text-sm text-gray-500">
+                Ano Letivo 2026
+              </span>
             </div>
           </div>
         </header>

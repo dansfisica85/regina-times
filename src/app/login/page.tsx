@@ -36,6 +36,9 @@ export default function LoginPage() {
         throw new Error(data.error || 'Erro ao fazer login')
       }
 
+      // Salvar dados do usuário no localStorage
+      localStorage.setItem('user', JSON.stringify(data.user))
+
       router.push('/dashboard')
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Erro ao fazer login')
