@@ -105,12 +105,10 @@ export default function LoginPage() {
           </form>
         </CardContent>
         <CardFooter className="flex flex-col gap-4 text-center text-sm">
-          <p className="text-muted-foreground">
-            Para demonstração, acesse diretamente o{' '}
-            <Link href="/dashboard" className="text-blue-600 hover:underline">
-              Dashboard
-            </Link>
-          </p>
+          <div className="text-xs text-gray-500 bg-gray-50 p-3 rounded-md w-full">
+            <p className="font-medium mb-1">Credenciais de teste:</p>
+            <p>Admin: admin@reginatimes.edu.br / Admin@2026!</p>
+          </div>
           <Link href="/" className="text-blue-600 hover:underline">
             Voltar para a página inicial
           </Link>
