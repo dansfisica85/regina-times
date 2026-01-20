@@ -30,34 +30,34 @@ Acesso apenas para observação, sem alterações.
 ### Diretores de Escolas (26 usuários)
 Cada diretor tem acesso apenas à sua própria escola.
 
-| Escola | Email | Senha |
-|--------|-------|-------|
-| E001 - EE Prof. Maria da Silva (São Paulo) | escola01@reginatimes.edu.br | Escola01@2026 |
-| E002 - EE Dr. João Santos (São Paulo) | escola02@reginatimes.edu.br | Escola02@2026 |
-| E003 - EE Gov. Franco Montoro (Campinas) | escola03@reginatimes.edu.br | Escola03@2026 |
-| E004 - EE Prof. Ana Costa (Santos) | escola04@reginatimes.edu.br | Escola04@2026 |
-| E005 - EE Dom Pedro II (Ribeirão Preto) | escola05@reginatimes.edu.br | Escola05@2026 |
-| E006 - EE Pres. Vargas (São José dos Campos) | escola06@reginatimes.edu.br | Escola06@2026 |
-| E007 - EE Prof. Carlos Drummond (Sorocaba) | escola07@reginatimes.edu.br | Escola07@2026 |
-| E008 - EE Tiradentes (Osasco) | escola08@reginatimes.edu.br | Escola08@2026 |
-| E009 - EE Castro Alves (Santo André) | escola09@reginatimes.edu.br | Escola09@2026 |
-| E010 - EE Machado de Assis (São Bernardo do Campo) | escola10@reginatimes.edu.br | Escola10@2026 |
-| E011 - EE Monteiro Lobato (Guarulhos) | escola11@reginatimes.edu.br | Escola11@2026 |
-| E012 - EE Cecília Meireles (Mauá) | escola12@reginatimes.edu.br | Escola12@2026 |
-| E013 - EE Rui Barbosa (Diadema) | escola13@reginatimes.edu.br | Escola13@2026 |
-| E014 - EE José de Alencar (Carapicuíba) | escola14@reginatimes.edu.br | Escola14@2026 |
-| E015 - EE Prof. Paulo Freire (Bauru) | escola15@reginatimes.edu.br | Escola15@2026 |
-| E016 - EE Anita Garibaldi (Piracicaba) | escola16@reginatimes.edu.br | Escola16@2026 |
-| E017 - EE Santos Dumont (Jundiaí) | escola17@reginatimes.edu.br | Escola17@2026 |
-| E018 - EE Princesa Isabel (Franca) | escola18@reginatimes.edu.br | Escola18@2026 |
-| E019 - EE Prof. Darcy Ribeiro (Taubaté) | escola19@reginatimes.edu.br | Escola19@2026 |
-| E020 - EE Vila Lobos (Marília) | escola20@reginatimes.edu.br | Escola20@2026 |
-| E021 - EE Prof. Florestan Fernandes (Presidente Prudente) | escola21@reginatimes.edu.br | Escola21@2026 |
-| E022 - EE Cândido Portinari (Araraquara) | escola22@reginatimes.edu.br | Escola22@2026 |
-| E023 - EE Oscar Niemeyer (São Carlos) | escola23@reginatimes.edu.br | Escola23@2026 |
-| E024 - EE Prof. Milton Santos (Limeira) | escola24@reginatimes.edu.br | Escola24@2026 |
-| E025 - EE Tarsila do Amaral (Rio Claro) | escola25@reginatimes.edu.br | Escola25@2026 |
-| E026 - EE Prof. Sergio Buarque (Itapetininga) | escola26@reginatimes.edu.br | Escola26@2026 |
+| Cidade | Escola | Email | Senha |
+|--------|--------|-------|-------|
+| Barrinha | E001 - PEI EE Prof. José Luiz de Siqueira | escola01@reginatimes.edu.br | Escola01@2026 |
+| Barrinha | E002 - EE Luiz Marcari | escola02@reginatimes.edu.br | Escola02@2026 |
+| Dumont | E003 - PEI EE Prof. Nestor Gomes de Araújo | escola03@reginatimes.edu.br | Escola03@2026 |
+| Jardinópolis | E004 - EE Dr. Mário Lins | escola04@reginatimes.edu.br | Escola04@2026 |
+| Jardinópolis | E005 - EE Prof. Plínio Berardo | escola05@reginatimes.edu.br | Escola05@2026 |
+| Pitangueiras | E006 - PEI EE Domingos Paro | escola06@reginatimes.edu.br | Escola06@2026 |
+| Pitangueiras | E007 - PEI EE Maria Falconi de Felício | escola07@reginatimes.edu.br | Escola07@2026 |
+| Pitangueiras | E008 - EE Maurício Montecchi | escola08@reginatimes.edu.br | Escola08@2026 |
+| Pitangueiras | E009 - EE Orminda Guimarães Cotrim | escola09@reginatimes.edu.br | Escola09@2026 |
+| Pontal | E010 - EE Dona Adélia Frascino | escola10@reginatimes.edu.br | Escola10@2026 |
+| Pontal | E011 - EE Prof. Basílio Rodrigues da Silva | escola11@reginatimes.edu.br | Escola11@2026 |
+| Pontal | E012 - PEI EE Profª Dolores Belém Novaes | escola12@reginatimes.edu.br | Escola12@2026 |
+| Pontal | E013 - EE Profª Dolores Martins de Castro | escola13@reginatimes.edu.br | Escola13@2026 |
+| Pontal | E014 - EE Profª Josepha Castro | escola14@reginatimes.edu.br | Escola14@2026 |
+| Pontal | E015 - EE Profª Yolanda Luiz Sichieri | escola15@reginatimes.edu.br | Escola15@2026 |
+| Sertãozinho | E016 - EE Anna Passamonti Balardin | escola16@reginatimes.edu.br | Escola16@2026 |
+| Sertãozinho | E017 - PEI EE Dr. Antônio Furlan Júnior | escola17@reginatimes.edu.br | Escola17@2026 |
+| Sertãozinho | E018 - EE Dr. Isaías José Ferreira | escola18@reginatimes.edu.br | Escola18@2026 |
+| Sertãozinho | E019 - EE Ferrucio Chiaratti | escola19@reginatimes.edu.br | Escola19@2026 |
+| Sertãozinho | E020 - EE Prof. Bruno Pieroni | escola20@reginatimes.edu.br | Escola20@2026 |
+| Sertãozinho | E021 - EE Profª Edith Silveira Dalmaso | escola21@reginatimes.edu.br | Escola21@2026 |
+| Sertãozinho | E022 - PEI EE Profª Maria Conceição R. Silva Magon | escola22@reginatimes.edu.br | Escola22@2026 |
+| Sertãozinho | E023 - EE Profª Nícia Fabíola Zanutto Giraldi | escola23@reginatimes.edu.br | Escola23@2026 |
+| Sertãozinho | E024 - PEI EE Winston Churchill | escola24@reginatimes.edu.br | Escola24@2026 |
+| Terra Roxa | E025 - PEI EE Profª Maria Élyde Mônaco dos Santos | escola25@reginatimes.edu.br | Escola25@2026 |
+| Viradouro | E026 - EE Odulfo de Oliveira Guimarães | escola26@reginatimes.edu.br | Escola26@2026 |
 
 ### Níveis de Permissão
 

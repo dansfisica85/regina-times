@@ -4,7 +4,6 @@ import {
   Users, 
   BookOpen, 
   GraduationCap, 
-  Calendar, 
   Clock,
   TrendingUp,
   AlertTriangle
@@ -18,13 +17,6 @@ export default function DashboardPage() {
     { label: 'Professores', value: '0', icon: Users, href: '/dashboard/professores', color: 'text-green-600' },
     { label: 'Disciplinas', value: '0', icon: BookOpen, href: '/dashboard/disciplinas', color: 'text-purple-600' },
     { label: 'Turmas', value: '0', icon: GraduationCap, href: '/dashboard/turmas', color: 'text-orange-600' },
-  ]
-
-  const quickActions = [
-    { label: 'Cadastrar Professor', href: '/dashboard/professores/novo', icon: Users },
-    { label: 'Nova Turma', href: '/dashboard/turmas/nova', icon: GraduationCap },
-    { label: 'Criar Grade', href: '/dashboard/grades/nova', icon: Calendar },
-    { label: 'Gerar Horários', href: '/dashboard/geracao', icon: Clock },
   ]
 
   return (
@@ -53,28 +45,6 @@ export default function DashboardPage() {
           </Link>
         ))}
       </div>
-
-      {/* Quick Actions */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Ações Rápidas</CardTitle>
-          <CardDescription>Tarefas comuns do sistema</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {quickActions.map((action) => (
-              <Link key={action.label} href={action.href}>
-                <Card className="hover:bg-gray-50 transition-colors cursor-pointer">
-                  <CardContent className="pt-6 text-center">
-                    <action.icon className="h-8 w-8 mx-auto mb-2 text-blue-600" />
-                    <p className="text-sm font-medium">{action.label}</p>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
 
       {/* Info Cards */}
       <div className="grid md:grid-cols-2 gap-6">

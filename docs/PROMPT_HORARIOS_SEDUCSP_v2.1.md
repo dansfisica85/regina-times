@@ -1,4 +1,5 @@
 # PROMPT DETALHADO v2.1: SISTEMA DE GERAÇÃO DE HORÁRIOS ESCOLARES
+
 ## Plataforma Multi-Escola para 26 Instituições – Stack Moderno com Turso DB
 
 **Versão:** 2.1 – Com Turso + categorias/jornadas SEDUC‑SP 2026  
