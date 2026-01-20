@@ -1,7 +1,7 @@
 import { jsPDF } from 'jspdf'
 import autoTable from 'jspdf-autotable'
 import * as XLSX from 'xlsx'
-import ical, { ICalCalendarMethod } from 'ical-generator'
+import ical, { ICalCalendarMethod, ICalEventRepeatingFreq } from 'ical-generator'
 
 interface GradeHorariaExport {
   turma: string
@@ -203,7 +203,7 @@ export function exportarHorarioIcal(
       description: `Aula de ${aula.disciplina}\nTurma: ${aula.turma}`,
       location: aula.escola,
       repeating: {
-        freq: 'WEEKLY',
+        freq: ICalEventRepeatingFreq.WEEKLY,
         until: new Date(dataInicio.getFullYear(), 11, 31), // até fim do ano
       },
     })

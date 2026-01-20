@@ -23,7 +23,7 @@ export async function createToken(payload: Omit<TokenPayload, 'exp'>, expiresIn:
 export async function verifyToken(token: string): Promise<TokenPayload | null> {
   try {
     const { payload } = await jwtVerify(token, encodedKey)
-    return payload as TokenPayload
+    return payload as unknown as TokenPayload
   } catch {
     return null
   }
